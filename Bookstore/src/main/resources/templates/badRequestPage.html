@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<!-- header bar -->
+	<div th:replace="common/header :: navbar"></div>
+	
+	<!-- UI start -->
+	<div class="container" style="width: 100%;">
+
+		<div class="row">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				<h2 class="section-headlines">
+					<h2 class="section-headlines">
+						<span th:text="${user}? ${#strings.toUpperCase(user.username)} : 'All Books'"></span>
+					</h2>
+				</h2>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<a th:href="@{/}"><img src="/image/logo.png" class="img-responsive"
+					style="width: 100%" /></a>
+			</div>
+		</div>
+
+		<hr style="position: absolute; width: 72.3%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+
+		<img src="/image/wood.png" class="img-responsive"
+			style="margin-top: -40px; width: 100%;"/>
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-9 col-sm-offset-3">
+				<h5>Bad request. The request is invalid. Click <a th:href="@{/}">here</a> to return to the home page.</h5>
+			</div>
+		</div>
+
+	</div>
+	<!-- end of container -->
+
+	<!-- footer bar -->
+	<div th:replace="common/header :: footer"></div>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<div th:replace="common/header :: body-bottom-script"></div>
+
+</body>
+</html>

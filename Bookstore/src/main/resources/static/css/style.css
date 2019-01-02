@@ -1,0 +1,54 @@
+body{
+	
+	padding-bottom: 20px;
+}
+hr{
+	border: none;
+	height: 1px;
+	color: #333;
+	background-color: #333;
+}
+.container{
+	width: 90%;
+}
+.navbar{
+	margin-bottom: 20px;
+}
+.box{
+	border: 1px solid blue;
+}
+.home-headlines{
+	font-family: 'Times New Roman', Times, serif;
+	font-size:24px;
+	color:#fff;
+	margin: auto;
+	text-align: center;
+	
+}
+.home-headlines span{
+	background-color: #231F20;
+	padding: 5px 22px;
+}
+.section-headlines{
+	font-family: 'Times New Roman', Times, serif;
+	font-size:24px;
+	color:#fff;
+	margin: auto;
+	margin-top: 104px;
+	text-align: center;
+	
+}
+.section-headlines span{
+	background-color: #231F20;
+	padding: 5px 22px;
+}
+.action hover, action:visited, ation:link, action.active{
+	text-decoration: none;
+}
+
+.bottom_ul li{
+	display: inline;
+}
+.banner{
+	background-image: url("/image/bgline.png");
+}

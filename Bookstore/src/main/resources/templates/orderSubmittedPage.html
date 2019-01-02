@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+
+	<div th:replace="common/header :: navbar"></div>
+
+	<div class="container" style="width: 100%;">
+
+		<div class="row">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				<h2 class="section-headlines">
+					<span>User Account</span>
+				</h2>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<a th:href="@{/}"><img src="/image/logo.png" class="img-responsive"
+					style="width: 100%" /></a>
+			</div>
+		</div>
+
+		<hr
+			style="position: absolute; width: 72.3%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+
+		<img src="/image/wood.png" class="img-responsive"
+			style="margin-top: -40px; width: 100%;" />
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-12">
+				<div class="alert alert-success">
+					<h3><i class="fa fa-check" aria-hidden="true" style="color: limegreen;"></i>
+					Thank you, your order has been placed.</h3>
+					<h4>The estimated Delivery Date is <span th:text="${estimatedDeliveryDate}"></span></h4>
+				</div>
+				
+				<h3>List of Items</h3>
+				<div class="row" th:each="cartItem: ${cartItemList}">
+					<hr />
+					<!-- <div class="col-sm-2"></div> -->
+					<div class="col-sm-12">
+						<div class="row" th:each="cartItem: ${cartItemList}">
+							<div class="col-sm-12">
+								<hr />
+
+								<div class="row">
+									<div class="col-sm-2">
+										<a th:href="@{bookDetail(id=${cartItem.book.id})}"> <img
+											style="width: 67%;"
+											th:src="#{adminPath}+@{/image/book/}+${cartItem.book.id}+'.png'" />
+										</a>
+
+									</div>
+									<div class="col-sm-6">
+										<a th:href="@{/bookDetail?id=}+${cartItem.book.id}">
+											<h4 th:text="${cartItem.book.title}"></h4>
+										</a>
+
+									</div>
+									<div class="col-sm-2">
+										<h5 style="color: #db3208; font-size: large;">
+											$<span th:text="${cartItem.book.ourPrice}"
+												th:style="${cartItem.book.inStockNumber}==0? 'text-decoration: line-through' : ''"></span>
+										</h5>
+									</div>
+									<div class="col-sm-2">
+										<h5 style="font-size: large;" th:text="${cartItem.qty}"></h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- end of container -->
+
+	<!-- footer bar -->
+	<div th:replace="common/header :: footer"></div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<div th:replace="common/header :: body-bottom-script"></div>
+
+</body>
+</html>
